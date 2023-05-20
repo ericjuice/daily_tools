@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         白嫖怪终结者：B站自动点赞
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  拯救up主：自动点赞脚本!
 // @author       Ericjuice
 // @match        https://www.bilibili.com/video/*
@@ -59,11 +59,11 @@
     }
 
     toast.init();
-    var btn=$("span.like.on");
+    var btn=$("#arc_toolbar_report .video-like.on");
     if ( btn.length<1)//没有点赞过
     {
         // $(".like").click();
-        $("span.like").click();
+        $("#arc_toolbar_report .video-like").click();
         toast.show("点赞成功");
         setTimeout(toast.rmv, 1000);
     }
